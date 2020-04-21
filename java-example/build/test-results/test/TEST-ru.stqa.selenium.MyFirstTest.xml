@@ -1,35 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.selenium.MyFirstTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-04-21T18:43:42" hostname="homepc" time="51.878">
+<testsuite name="ru.stqa.selenium.MyFirstTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-04-21T20:01:58" hostname="homepc" time="29.069">
   <properties/>
-  <testcase name="myFirstTest" classname="ru.stqa.selenium.MyFirstTest" time="51.878"/>
+  <testcase name="myFirstTest" classname="ru.stqa.selenium.MyFirstTest" time="29.069">
+    <failure message="org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;Hello, world! - Поиск в Google&quot;. Current title: &quot;Руддщб цщкдв! - Поиск в Google&quot; (tried for 10 second(s) with 500 milliseconds interval)&#10;Build info: version: '4.0.0-alpha-5', revision: 'b3a0d621cc'&#10;System info: host: 'HOMEPC', ip: '192.168.0.11', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_241'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.113, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\pc\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:52079}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}&#10;Session ID: 3f8d389039917c17e1cdcbf6118eaa35" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for title to be &quot;Hello, world! - Поиск в Google&quot;. Current title: &quot;Руддщб цщкдв! - Поиск в Google&quot; (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.0.0-alpha-5', revision: 'b3a0d621cc'
+System info: host: 'HOMEPC', ip: '192.168.0.11', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_241'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.113, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\pc\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:52079}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 3f8d389039917c17e1cdcbf6118eaa35
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+	at org.openqa.selenium.support.ui.FluentWait.lambda$checkConditionInLoop$2(FluentWait.java:255)
+	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1604)
+	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1596)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+</failure>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 2572
+Starting ChromeDriver 80.0.3987.106 (f68069574609230cf9b635cd784cfb1bf81bb53a-refs/branch-heads/3987@{#882}) on port 40828
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-апр 21, 2020 9:44:21 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1587499324.648][WARNING]: This version of ChromeDriver has not been tested with Chrome version 81.
+апр 21, 2020 11:02:06 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-[1587494665.893][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494666.120][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494666.227][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494666.528][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494667.326][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494667.428][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494667.723][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494669.793][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494669.895][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494669.999][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494670.293][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494670.576][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494670.684][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494670.843][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494671.041][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494671.174][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494671.276][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494671.379][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494671.492][SEVERE]: Timed out receiving message from renderer: 0.100
-[1587494673.094][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499329.347][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499329.498][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499329.921][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499330.114][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499330.351][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499333.120][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499333.225][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499333.328][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499333.445][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499333.582][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499333.729][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499333.919][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499334.145][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499334.379][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499334.917][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499335.019][SEVERE]: Timed out receiving message from renderer: 0.100
+[1587499335.568][SEVERE]: Timed out receiving message from renderer: 0.100
 ]]></system-err>
 </testsuite>
