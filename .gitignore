@@ -15,5 +15,9 @@ gradle-app.setting
 .idea/workspace.xml
 *.log
 .idea/runConfigurations/
-*.html
-java-example/build/test-results/test/TEST-ru.stqa.selenium.MyFirstTest.xml
+java-example/build/reports/tests/test/index.html
+java-example/build/reports/tests/test/packages/ru.stqa.selenium.html
+java-example/build/test-results/test/binary/output.bin
+java-example/build/test-results/test/binary/output.bin.idx
+java-example/build/test-results/test/binary/results.bin
+.idea/workspace.xml
