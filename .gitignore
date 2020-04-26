@@ -1,5 +1,5 @@
-java-example/.gradle
-java-example/build/
+.gradle
+build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -15,9 +15,4 @@ gradle-app.setting
 .idea/workspace.xml
 *.log
 .idea/runConfigurations/
-java-example/build/reports/tests/test/index.html
-java-example/build/reports/tests/test/packages/ru.stqa.selenium.html
-java-example/build/test-results/test/binary/output.bin
-java-example/build/test-results/test/binary/output.bin.idx
-java-example/build/test-results/test/binary/results.bin
 .idea/workspace.xml
