@@ -13,5 +13,17 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    implementation 'org.seleniumhq.selenium:selenium-java:4.0.0-alpha-5'
+    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    implementation 'ru.stqa.selenium:webdriver-factory:4.4'
 }
+
+test {
+    maxParallelForks = 10
+}
+
+/*
+// При использовании Web Driver Factory для параллельного запуска тестов
+tasks.test {
+    useJUnitPlatform()
+}
+*/
