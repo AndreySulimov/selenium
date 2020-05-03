@@ -36,8 +36,8 @@ public class TestBase {
 
     if (tlDriver.get() != null) {
       driver = tlDriver.get();
-      driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-      wait = new WebDriverWait(driver, 1);
+      driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+      wait = new WebDriverWait(driver, 5);
       return;
     }
 
@@ -61,8 +61,8 @@ public class TestBase {
     //driver = new InternetExplorerDriver();
 
     tlDriver.set(driver); // привязываем экземпляр драйвера к текущему потоку
-    driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-    wait = new WebDriverWait(driver, 1);
+    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    wait = new WebDriverWait(driver, 5);
 
     // закрываем браузер(ы)
     Runtime.getRuntime().addShutdownHook(
