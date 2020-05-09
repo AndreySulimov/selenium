@@ -10,7 +10,7 @@ import java.io.File;
 public class AddNewProductTest extends TestBase {
 
   @Test
-  public void adminLoginTest() {
+  public void addNewProductTest() {
     driver.get("http://localhost/litecart/admin/login.php");
     driver.findElement(By.name("username")).sendKeys("admin");
     driver.findElement(By.name("password")).sendKeys("admin");
