@@ -1,12 +1,11 @@
 package ru.stqa.selenium;
 
+import com.google.common.io.Files;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
@@ -21,6 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.stqa.selenium.factory.WebDriverPool;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
@@ -45,6 +45,16 @@ public class TestBase {
     @Override
     public void onException(Throwable throwable, WebDriver driver) {
       System.out.println(throwable);
+
+      // снятие скриншота при возникновении исключения и его сохранение
+      File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+      File screen = new File("screen-" + System.currentTimeMillis() + ".png");
+      try {
+        Files.copy(tmp, screen);
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      System.out.println(screen);
     }
   }
 
