@@ -1,6 +1,9 @@
 package ru.stqa.selenium;
 
 import com.google.common.io.Files;
+import net.lightbody.bmp.BrowserMobProxy;
+import net.lightbody.bmp.BrowserMobProxyServer;
+import net.lightbody.bmp.client.ClientUtil;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.AfterAll;
@@ -14,6 +17,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -23,6 +28,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import static org.openqa.selenium.remote.CapabilityType.PROXY;
+
 public class TestBase {
 
   // инициализируем хранилище, содержащее информацию о драйверах, привязанных к разным потокам
@@ -30,6 +37,7 @@ public class TestBase {
 
   public EventFiringWebDriver driver; // драйвер с использованием протоколирования
   public WebDriverWait wait;
+  public BrowserMobProxy proxy; // переменная, содержащая перехваченный прокси-сервером трафик
 
   public static class MyListener extends AbstractWebDriverEventListener {
     @Override
@@ -72,8 +80,22 @@ public class TestBase {
       return;
     }
 
+    // возможность перехвата трафика между клиентом (браузером) и сервером с помощью прокси-сервера (сервера-посредника)
+    proxy = new BrowserMobProxyServer();
+    proxy.start(0);
+
+    //Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
+
+    Proxy proxy = new Proxy();
+    proxy.setHttpProxy("localhost:8888");
+
+    DesiredCapabilities capabilities = new DesiredCapabilities();
+    //capabilities.setCapability(CapabilityType.PROXY, seleniumProxy);
+    capabilities.setCapability("proxy", proxy);
+
     // экземпляр драйвера для запуска Chrome с использованием протоколирования
-    driver = new EventFiringWebDriver(new ChromeDriver());
+    driver = new EventFiringWebDriver(new ChromeDriver(capabilities));
+
     // добавляем наблюдатель
     driver.register(new MyListener());
 
