@@ -81,20 +81,20 @@ public class TestBase {
     }
 
     // возможность перехвата трафика между клиентом (браузером) и сервером с помощью прокси-сервера (сервера-посредника)
-    proxy = new BrowserMobProxyServer();
-    proxy.start(0);
+//    proxy = new BrowserMobProxyServer();
+//    proxy.start(0);
 
     //Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
 
-    Proxy proxy = new Proxy();
-    proxy.setHttpProxy("localhost:8888");
-
-    DesiredCapabilities capabilities = new DesiredCapabilities();
+//    Proxy proxy = new Proxy();
+//    proxy.setHttpProxy("localhost:8888");
+//
+//    DesiredCapabilities capabilities = new DesiredCapabilities();
     //capabilities.setCapability(CapabilityType.PROXY, seleniumProxy);
-    capabilities.setCapability("proxy", proxy);
+//    capabilities.setCapability("proxy", proxy);
 
     // экземпляр драйвера для запуска Chrome с использованием протоколирования
-    driver = new EventFiringWebDriver(new ChromeDriver(capabilities));
+    driver = new EventFiringWebDriver(new ChromeDriver());
 
     // добавляем наблюдатель
     driver.register(new MyListener());
