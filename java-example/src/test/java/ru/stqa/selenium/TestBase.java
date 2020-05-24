@@ -4,7 +4,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
@@ -13,6 +15,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.stqa.selenium.factory.WebDriverPool;
 
@@ -22,10 +26,27 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
 
   // инициализируем хранилище, содержащее информацию о драйверах, привязанных к разным потокам
-  public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
+  public static ThreadLocal<EventFiringWebDriver> tlDriver = new ThreadLocal<>();
 
-  public WebDriver driver;
+  public EventFiringWebDriver driver; // драйвер с использованием протоколирования
   public WebDriverWait wait;
+
+  public static class MyListener extends AbstractWebDriverEventListener {
+    @Override
+    public void beforeFindBy(By by, WebElement element, WebDriver driver) {
+      System.out.println(by);
+    }
+
+    @Override
+    public void afterFindBy(By by, WebElement element, WebDriver driver) {
+      System.out.println(by + " found");
+    }
+
+    @Override
+    public void onException(Throwable throwable, WebDriver driver) {
+      System.out.println(throwable);
+    }
+  }
 
   @Before
   public void start() {
@@ -41,8 +62,13 @@ public class TestBase {
       return;
     }
 
+    // экземпляр драйвера для запуска Chrome с использованием протоколирования
+    driver = new EventFiringWebDriver(new ChromeDriver());
+    // добавляем наблюдатель
+    driver.register(new MyListener());
+
     // экземпляр драйвера для запуска Chrome
-    driver = new ChromeDriver();
+    // driver = new ChromeDriver();
 
     // экземпляр драйвера для запуска Firefox
     //driver = new FirefoxDriver();
