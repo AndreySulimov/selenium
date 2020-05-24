@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -38,6 +39,10 @@ public class MyFirstTest {
     driver.findElement(By.name("q")).sendKeys("Hello, world!");
     driver.findElement(By.id("tsf")).submit();
     wait.until(titleIs("Hello, world! - Поиск в Google"));
+    // выводим логи браузера
+    for (LogEntry l : driver.manage().logs().get("browser").getAll()) {
+      System.out.println(l);
+    }
   }
 
   @After
