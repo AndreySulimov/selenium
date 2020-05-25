@@ -1,4 +1,4 @@
-package ru.stqa.selenium;
+package ru.stqa.selenium.tests;
 
 import org.junit.Test;
 //import org.junit.jupiter.api.Test; // При использовании Web Driver Factory для параллельного запуска тестов

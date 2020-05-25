@@ -1,20 +1,9 @@
-package ru.stqa.selenium;
+package ru.stqa.selenium.tests;
 
 import net.lightbody.bmp.core.har.Har;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.logging.LogEntry;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 

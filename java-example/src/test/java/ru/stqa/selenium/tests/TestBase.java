@@ -1,4 +1,4 @@
-package ru.stqa.selenium;
+package ru.stqa.selenium.tests;
 
 import com.google.common.io.Files;
 import net.lightbody.bmp.BrowserMobProxy;

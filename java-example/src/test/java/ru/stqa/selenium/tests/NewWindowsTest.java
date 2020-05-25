@@ -1,4 +1,4 @@
-package ru.stqa.selenium;
+package ru.stqa.selenium.tests;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
